@@ -1,3 +1,4 @@
+#Hello! This is where all the building gets done, and when it's finished I'll polish it up and remove the comments.
 from dotenv import load_dotenv
 import os
 import json
