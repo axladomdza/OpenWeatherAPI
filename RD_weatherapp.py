@@ -6,9 +6,7 @@ import json
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
-
 import requests as r
-#Base URLs
 
 
 def get_coords():
