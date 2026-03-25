@@ -28,17 +28,17 @@ def get_coords():
 
 #NEXT: Put coords into weather url to truly start
 
-def get_weather(lat, lon, city_name):
-    CWEATHER_BASE = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=metric"
+def get_weather(lat, lon, name):
+    CWEATHER_BASE = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=imperial"
     weath_resp = r.get(CWEATHER_BASE)   #getting the data from the URL
 
     data = weath_resp.json() #reading the file stream directly
 
     weath_descr = data['weather'][0]['description'] #finding the weather description
     weath_maintemp = data['main']['temp']   #finding the main temperature
-    print(f"The weather in {city_name} is {weath_descr} and the temperature is {weath_maintemp} Celsius")   #putting vars into a string
+    print(f"The weather in {name} is {weath_descr} and the temperature is {weath_maintemp} Fahreinheit")   #putting vars into a string
     # user_choice = input("What action would you like to do?\n 1 - ")
 
 
-lat, lon, city_name = get_coords()
-get_weather(lat, lon, city_name)
+lat, lon, city_name = get_coords() #introducing arguments
+get_weather(lat, lon, city_name) #running with those arguments
