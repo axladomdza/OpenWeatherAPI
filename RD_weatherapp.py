@@ -33,6 +33,11 @@ def get_coords():
 def get_weather(lat, lon, name):
     '''
     Uses coords from get_coords to get weather details 
+
+    Args:
+        lat (string): latitude
+        lon (string): longitude
+        name (string): name of city
     '''
     CWEATHER_BASE = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=imperial" #Adding the longitude and latitude to the URL request
     weath_resp = r.get(CWEATHER_BASE) 
