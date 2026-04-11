@@ -25,7 +25,7 @@ def get_coords():
             print("City not found, check your spelling and try again.")
             continue
         
-        lat = coords_json[0]['lat']
+        lat = coords_json[0]['lat'] #traceback and keyerror: 0
         lon = coords_json[0]['lon'] 
         return lat, lon, city_name
 
