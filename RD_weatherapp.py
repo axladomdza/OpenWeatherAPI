@@ -46,6 +46,10 @@ def get_weather(lat, lon, name):
     weath_maintemp = weath_data['main']['temp']  # Finding the main temperature
     print(f"The weather in {name} is {weath_descr} and the temperature is {weath_maintemp} Fahreinheit.")  # Prints city and weather conditions together
     
+def temp_details(lat, lon, name):
+    TEMP_BASE = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=imperial"
+    tempweath_resp = r.get(TEMP_BASE)
+    temp_data = tempweath_resp.json()
 
 
 lat, lon, city_name = get_coords() 
