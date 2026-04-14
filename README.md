@@ -33,7 +33,7 @@ This is my first GitHub project, and it's currently a **work in progress** as I 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/OpenWeatherAPI.git
+   git clone https://github.com/axladomdza/OpenWeatherAPI.git
    cd weather-app
    ```
 
@@ -75,7 +75,7 @@ This is my first GitHub project, and it's currently a **work in progress** as I 
 
 ## 📌 Roadmap (What I'm Building Next)
 
-* [ ] Convert temperature units (F ↔ C)
+* [-] Convert temperature units (F ↔ C)
 * [ ] Add forecast (multi-day weather)
 * [ ] Improve error handling (API failures, edge cases)
 * [ ] Refactor into modular structure (separate files)
