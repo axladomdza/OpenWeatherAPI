@@ -21,6 +21,10 @@ def get_coords():
         coords_resp = r.get(GEOCODE_BASE)  # Returns 200 even if city is not found
         coords_json = coords_resp.json()
         
+        if coords_resp.status_code != 200:  # Status code check
+            print("API request failed with {coords_resp.status_code}. Check your API key or your internet connection")
+            continue
+
         if len(coords_json) == 0:
             print("City not found, check your spelling and try again.")
             continue
@@ -52,7 +56,7 @@ def temp_details(lat, lon, name):
     temp_data = tempweath_resp.json()
     temp_high = temp_data['main']['temp_max']   # Getting maximum temperature
     temp_low = temp_data['main']['temp_min']    # Getting minimum temperature
-    print(f"In {name} the maximum temperature is {temp_high} and the minimum temperature is {temp_low}")
+    print(f"In {name} the maximum temperature is {temp_high}F and the minimum temperature is {temp_low}F")
 
 lat, lon, city_name = get_coords() 
 temp_details(lat, lon, city_name)
